@@ -18,7 +18,7 @@
 
 - **Creating the Add Flashcard View** — Finally, I created a separate SwiftUI view for adding new flashcards. This view collects the user's question and answer and passes the newly created card back to the main card array, allowing it to immediately become part of the flashcard deck.
 
-##Features##
+## Features
 
 - [x] View a flashcard and toggle between the card's question and answer text
 - [x] Understand the effects of swiping left or right by updating the cards color as the user swipes
@@ -26,5 +26,5 @@
 - [x] Reset the deck with all the cards or only cards they've categorized as needing more practice
 - [x] Create new flashcards and add them to the deck
 
-##Gif##
+## Gif
 ![Gif showcasing functionality](lab4.gif)
