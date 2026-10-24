@@ -66,13 +66,10 @@ struct CardView: View {
             }.onEnded { gesture in
                 
                 if gesture.translation.width > swipeThreshold { // <-- Compare the gesture ended translation value to the swipeThreshold
-                    print("👉 Swiped right")
                     onSwipedRight?()
                 } else if gesture.translation.width < -swipeThreshold {
-                    print("👈 Swiped left")
                     onSwipedLeft?()
                 } else {
-                    print("🚫 Swipe canceled")
                     withAnimation(.bouncy) { // <-- Make updates to state managed property with animation
                         offset = .zero
                     }
