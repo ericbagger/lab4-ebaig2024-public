@@ -13,22 +13,24 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-
+            
             // Card background
             RoundedRectangle(cornerRadius: 25.0)
-                .fill(Color.blue.gradient)
+                .fill(isShowingQuestion ?
+                      Color.blue.gradient :
+                        Color.indigo.gradient)
                 .shadow(color: .black, radius: 4, x: -2, y: 2)
-
+            
             VStack(spacing: 20) {
-
+                
                 // Card type (question vs answer)
                 Text(isShowingQuestion ? "Question" : "Answer")
                     .bold()
-
+                
                 // Separator
                 Rectangle()
                     .frame(height: 1)
-
+                
                 // Card text
                 Text(isShowingQuestion ? card.question : card.answer)
             }
@@ -37,6 +39,9 @@ struct CardView: View {
             .padding()
         }
         .frame(width: 300, height: 500)
+        .onTapGesture {
+            isShowingQuestion.toggle()
+        }
     }
 }
 
