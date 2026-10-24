@@ -49,7 +49,9 @@ struct ContentView: View {
         }
         .animation(.bouncy, value: cards)
         .sheet(isPresented: $createCardViewPresented, content: {
-            Text("Create cards here...")
+            CreateFlashcardView { card in
+                    cards.append(card)
+                }
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity)         .overlay(alignment: .topTrailing) { // <-- Add an overlay modifier with top trailing alignment for its contents
             Button("Add Flashcard", systemImage: "plus") {  // <-- Add a button to add a flashcard
